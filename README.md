@@ -16,15 +16,18 @@ please follow the .env.example file and create .env file
 
 ### Step 3:
 I am using the node version 20 build this project, so for switch the version used bellow command
-#### command - nvm use 20
+command
+#### nvm use 20
 
 ### Step 3:
 run the migration file to create the tables inside the db
-#### command - npm run migration:run
+command
+#### npm run migration:run
 
 ### Step 4:
 run the project
-#### command - npm run start:dev
+command
+#### npm run start:dev
 
 ### Step 5:
 now you can visit the swagger docs to check the api by the below given route
