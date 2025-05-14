@@ -1,4 +1,4 @@
-import { Body, Controller, Inject, Post, UsePipes } from '@nestjs/common';
+import { Body, Controller, Get, Post, UsePipes } from '@nestjs/common';
 import { JoiValidationPipe } from 'src/middleware/pipe/joi-validation.pipe';
 import { createUserProfileSchema } from './user.validation';
 import { ICreateUserProfile } from './user.interface';
@@ -12,6 +12,12 @@ export class UsersController extends ResponseService {
         private readonly userService : UsersService
     ){
         super();
+    }
+
+    @Get()
+    async getUserProfile() {
+        const {data, message} = await this.userService.getUserProfile();
+        return this.sendResponse(data, message);
     }
 
     @Post()

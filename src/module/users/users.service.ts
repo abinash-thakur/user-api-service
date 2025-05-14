@@ -23,9 +23,14 @@ export class UsersService extends ResponseService {
             age,
             email
         });
-        
+
         const userData = await this.userProfileRepo.save(userObj);
         await this.redisPublisher.publish(PUBLISHER.USER_PROFILE, userData);
         return this.serviceResponse(userData, "User is created");
+    }
+
+    getUserProfile = async() => {
+        const userData = await this.userProfileRepo.find();
+        return this.serviceResponse(userData, "✅ User profile retrieved successfully.")
     }
 }
