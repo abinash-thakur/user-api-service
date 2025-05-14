@@ -5,7 +5,6 @@ import { getAppConfig } from 'src/config/app.config';
 @Injectable()
 export class RedisService implements OnModuleInit, OnModuleDestroy {
     public publisher: Redis;
-    public subscriber: Redis;
     private readonly logger = new Logger(RedisService.name);
 
     onModuleInit() {
@@ -22,6 +21,5 @@ export class RedisService implements OnModuleInit, OnModuleDestroy {
 
     onModuleDestroy() {
         this.publisher?.disconnect();
-        this.subscriber?.disconnect();
     }
 }

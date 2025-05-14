@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { UserProfileEntity } from 'src/infra/database/postgres/entities/userProfiles.entity';
 import { USER_PROFILE_REPOSITORY } from 'src/utils/constant/core';
-import { PUBLISHER } from 'src/utils/enums/publisher.enum';
+import { REDIS_CHANNEL } from 'src/utils/enums/redisChannel.enum';
 import { ResponseService } from 'src/utils/handler/responseHandler';
 import { RedisPublisherService } from 'src/utils/reidsPubSub/reidsPublisher';
 import { Repository } from 'typeorm';
@@ -25,7 +25,7 @@ export class UsersService extends ResponseService {
         });
 
         const userData = await this.userProfileRepo.save(userObj);
-        await this.redisPublisher.publish(PUBLISHER.USER_PROFILE, userData);
+        await this.redisPublisher.publish(REDIS_CHANNEL.USER_PROFILE, userData);
         return this.serviceResponse(userData, "User is created");
     }
 

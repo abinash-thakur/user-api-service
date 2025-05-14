@@ -1,7 +1,7 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('user_profile_copy')
-export class UserProfileEntity {
+export class UserProfileCopyEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -21,5 +21,5 @@ export class UserProfileEntity {
     insertedAt: Date;
 
     @UpdateDateColumn({ type: 'timestamp with time zone'})
-    updatedAt: Date;
+    modifiedAt: Date;
 }
