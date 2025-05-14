@@ -1,9 +1,8 @@
-// app.config.ts
 import { ConfigService } from '@nestjs/config';
 import { AppConfig } from './app-config.interface';
 import * as dotenv from 'dotenv';
 
-dotenv.config(); // Load .env
+dotenv.config();
 
 // Instantiate ConfigService
 const config = new ConfigService();
