@@ -19,7 +19,7 @@ I am using the node version 20 build this project, so for switch the version use
 #### command - nvm use 20
 
 ### Step 3:
-run the migration file to create the schema inside the db
+run the migration file to create the tables inside the db
 #### command - npm run migration:run
 
 ### Step 4:
