@@ -15,11 +15,12 @@ git clone https://github.com/abinash-thakur/user-api-service.git
 please follow the .env.example file and create .env file
 
 ### Step 3:
-I am using the node version 20 build this project, so for switch the version used bellow command
+I am using the node version 20 build this project, so for switch the version
 #### nvm use 20
 
 ### Step 3:
-run the migration file to create the tables inside the db use below command
+I am using the postgreSQL
+run the migration file to create the tables inside the db
 #### npm run migration:run
 
 ### Step 4:
