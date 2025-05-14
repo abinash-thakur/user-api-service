@@ -6,6 +6,7 @@ import { getAppConfig } from 'src/config/app.config';
 export class RedisService implements OnModuleInit, OnModuleDestroy {
     public publisher: Redis;
     public subscriber: Redis;
+    private readonly logger = new Logger(RedisService.name);
 
     onModuleInit() {
         const { host, port, password } = getAppConfig().database.redis;
@@ -16,7 +17,7 @@ export class RedisService implements OnModuleInit, OnModuleDestroy {
             password,
             lazyConnect: false,
         });
-        Logger.log('Redis connections initialized');
+        this.logger.log('Redis connections initialized');
     }
 
     onModuleDestroy() {

@@ -1,8 +1,11 @@
 // src/config/env.validation.ts
 import * as Joi from 'joi';
+import { ENVIRONMENT_ENUM } from 'src/utils/enums/environment.enum';
 
 export const envValidationSchema = Joi.object({
-    NODE_ENV: Joi.string().valid('development', 'production', 'test').required(),
+    NODE_ENV: Joi.string()
+    .valid(...Object.values(ENVIRONMENT_ENUM))
+    .required(),
     API_PREFIX: Joi.string().required(),
     PORT: Joi.number().default(3000),
 
