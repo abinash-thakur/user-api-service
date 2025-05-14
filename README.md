@@ -11,28 +11,27 @@ Clone the repository to your local machine using the following command:
 git clone https://github.com/abinash-thakur/user-api-service.git
 ```
 
-### Step 2: 
+### Step 2: setup environment variable
 please follow the .env.example file and create .env file
 
-### Step 3:
+### Step 3: setup the database
 I am using the node version 20 build this project, so for switch the version
 #### nvm use 20
 
 ### Step 3:
-I am using the postgreSQL
-run the migration file to create the tables inside the db
+Ensure you have PostgreSQL set up and running. Then, run the migration to create the necessary tables inside the database:
 #### npm run migration:run
 
 ### Step 4:
-run the project use below command
+Start the development server using the following command:
 #### npm run start:dev
 
 ### Step 5:
-now you can visit the swagger docs to check the api by the below given route
+Once the server is running, you can visit the Swagger API documentation at:
 #### http://localhost:8082/api/docs
 
 ### Step 6:
-this is my base route
+This is the base route for your API:
 #### http://localhost:8082/api/
 
 
