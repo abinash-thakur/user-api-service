@@ -1,7 +1,7 @@
 import * as Joi from 'joi';
-import { ICreateUserProfile } from './user.interface';
+import { CreateUserProfileDto } from './dto/user.dto';
 
-export const createUserProfileSchema = Joi.object<ICreateUserProfile>({
+export const createUserProfileSchema = Joi.object<CreateUserProfileDto>({
     user: Joi.string()
         .required()
         .messages({
