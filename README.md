@@ -36,11 +36,14 @@ This is the base route for your API:
 
 
 
-## Run using docker Environment
-### Step - 1:
-Run the below given command
-#### sudo docker-compose --env-file .env up --build
+## Run in Docker Environment
+### Step 1: Stop Local PostgreSQL and Redis Servers
+Before running the Docker commands, make sure to stop any locally running PostgreSQL and Redis servers to avoid conflicts with the Docker containers.
 
 ### Step - 2:
-After stop the service run the below command
+To run the service in a Docker environment, use the following command:
+#### sudo docker-compose --env-file .env up --build
+
+### Step - 3:
+To stop the service and remove volumes and orphan containers, run:
 #### sudo docker compose down --volumes --remove-orphans
